@@ -1,0 +1,57 @@
+//Beomjin Han
+//7867
+//CSC 140 Homework 2 - Programming portion
+
+import java.util.Random;
+import java.util.Scanner;
+public class Hw2 {
+
+
+	public static void main(String[] args) {
+		Random rand = new Random();
+      Scanner sc = new Scanner(System.in);
+      
+      for(int i = 0;i<1;){                                    //infinite loop
+         System.out.println("Enter length of array:");
+         int length = sc.nextInt();                           //get length or loop
+   		int[] a = new int[length];                           //blank array with given loop length
+   		a=arrayBuilder(a);                                   //build array with random numbers 9-99999
+         long t = System.nanoTime();                          //start timer right before sort
+   		selSort(a);                                          //perform sort
+         t = System.nanoTime()-t;                             //record time
+   		printArr(a);                                         //print array in a nice way
+         System.out.println(t);                               //print time
+      }
+	}
+	
+	public static int[] selSort(int[] a){                      //selection sort from class notes
+		
+		for(int i=0; i<a.length;i++){
+			int mindex = i;
+			for(int j=i+1; j<a.length; j++){
+				if(a[j] < a[mindex]) mindex=j;
+			}
+			int swap = a[i];
+			a[i] = a[mindex];
+			a[mindex] = swap;
+		}
+		
+		return a;
+	}
+	public static void printArr(int[] a){                      //print elements in an array with a space in between
+		for(int i=0; i<a.length;i++){
+			System.out.print(a[i]+" ");
+		}
+      System.out.println();
+				
+	}
+	public static int[] arrayBuilder(int[] a){                 //loop and put random numbers in each space of the array
+		
+		Random rand = new Random();
+		for(int i=0; i<a.length;i++){
+			a[i] = rand.nextInt(100000);
+		}
+		return a;
+	}
+
+}

@@ -1,0 +1,25 @@
+<javaclass> ::= <classname> [X <classname>] B <varlist>; {<method>} E
+<classname> ::= C|D
+<varlist> ::= <vardef> {, <vardef>}
+<vardef> ::= <type> <varname> | <classname> <varref>
+<type> ::= I|S
+<varname> ::= <letter> {<char>}
+<letter> ::= Y|Z
+<char> ::= <letter> | <digit>
+<digit> ::= 0|1|2|3
+<integer> ::= <digit> {<digit>}
+<varref> ::= J|K
+<method> ::= <accessor> <type> <methodname> ([<varlist>]) B {<statemt>} <returnstatemt> E
+<accessor> ::= P|V
+<methodname> ::= M|N
+<statemt> ::= <ifstatemt> | <assignstatemt>;|<whilestatemt>
+<ifstatemt> ::= F <cond> T B {<statemt>} E [L B {<statemt>} E]
+<assignstatemt> ::= <varname> = <mathexpr> | <varref>  = <getvarref> 
+<mathexpr> ::= <factor> {+ factor}
+<factor> ::= <oprnd> {* oprnd}
+<oprnd> ::= <integer> | <varname> |  (<mathexpr>)
+<getvarref> ::= O  <classname>()
+<whilestatemt> ::= W <cond> T B {<statemt>} E
+<cond> ::= (<oprnd> <operator> <oprnd>)
+<operator> ::= < | = | > | !
+<returnstatemt> ::= R <varname>;

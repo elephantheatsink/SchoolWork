@@ -1,0 +1,38 @@
+Dear students,
+There is an typo error in Question #4 in Assignment2.
+The last transition has this error:
+Q2 on 0, 1 transitions to Q1
+Change it to:
+Q2 on 0, 1 (0 and 1) transitions to Q2. 
+So in short the last state has a transition on 0,1 on to itself (to represent any string).
+Cheers,
+Jagan
+
+ 
+In Question #4 the ' (quote) in front of (Q2) is missing.
+(DFA-Acceptor ‘(1 1 0 1 0) Q0 (Q2) P) returns #t
+and
+(DFA-Acceptor ‘(1 0 0) Q0 (Q2) P) returns #f
+
+(DFA-Acceptor ‘(1 1 0 1 0) Q0 '(Q2) P) returns #t
+and
+(DFA-Acceptor ‘(1 0 0) Q0 '(Q2) P) returns #f
+
+SUGGESTIONS:
+How can we convert the list of names:  '(Q2) to a list containing the function for Q2?   
+Solution:
+Given a list M of  names (the state function names),
+just call:
+(map eval M)
+to evaluate each name to the corresponding 
+function with the same name in the list.
+(map eval '(Q2) ) will convert the list of names to a list of functions with the same names.
+Also for Question #2:
+use the following definition to convert a list of letters to a string:
+(define (convert-to-string List) (eval (cons string-append (map symbol->string List))))
+(convert-to-string '(a b c d))
+returns:
+"abcd"
+Make sure you test with only letters as elements of the lists.
+cheers,
+Jagan

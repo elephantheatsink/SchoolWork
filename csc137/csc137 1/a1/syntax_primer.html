@@ -1,0 +1,33 @@
+
+<!-- saved from url=(0080)http://athena.ecs.csus.edu/~changw/class_docs/VerilogExamples/syntax_primer.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body bgcolor="white">
+
+<blockquote>
+
+<h2>Verilog Syntax Primer</h2>
+<p>
+</p><pre>When you have multiple source-code files, you can use
+<b>include</b> to <i>add</i> them to the current program, e.g.,
+   <b>`include "defines.v"
+   `include "cpu.v"
+   `include "memory.v"
+   `include "control_unit.v"</b>
+
+To define <i>constants</i>, e.g.,
+   <b>`define WORD_SIZE 32    // "back-tick" symbol, not single quote
+   `define LD    5'b00001
+   `define ST    5'b00011
+   `define ADD   5'b01100</b>
+
+Use <b>parameter</b> to declare <i>constant</i> variables, e.g.,
+   <b>parameter word_size = 32;</b>
+Multiple definitions:
+   <b>parameter
+         one = 1,
+         two = 2,
+         three = 3;</b>
+
+The "define" and "parameter" statements can occur either inside
+or outside of "module."
+</pre>
+</blockquote></body></html>

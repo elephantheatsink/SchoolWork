@@ -1,0 +1,83 @@
+#! /gaia/home/faculty/changw/ivl/bin/vvp
+:ivl_version "0.9.6 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x196d990 .scope module, "TestMod" "TestMod" 2 4;
+ .timescale 0 0;
+v0x19a2fa0_0 .net "C0", 0 0, L_0x19a3610; 1 drivers
+v0x19a3050_0 .net "C1", 0 0, L_0x19a3560; 1 drivers
+v0x19a3100_0 .var "CLK", 0 0;
+v0x19a31b0_0 .net "Q0", 0 0, v0x19a2cb0_0; 1 drivers
+v0x19a32b0_0 .net "Q1", 0 0, v0x19a2d60_0; 1 drivers
+v0x19a3380_0 .net "Q2", 0 0, v0x19a2e10_0; 1 drivers
+v0x19a3490_0 .net "Q3", 0 0, v0x19a2ef0_0; 1 drivers
+S_0x19a2ac0 .scope module, "my_ripple" "RippleMod" 2 15, 2 35, S_0x196d990;
+ .timescale 0 0;
+v0x19a2bf0_0 .net "CLK", 0 0, v0x19a3100_0; 1 drivers
+v0x19a2cb0_0 .var "Q0", 0 0;
+v0x19a2d60_0 .var "Q1", 0 0;
+v0x19a2e10_0 .var "Q2", 0 0;
+v0x19a2ef0_0 .var "Q3", 0 0;
+E_0x19a2910 .event posedge, v0x19a2bf0_0;
+S_0x19901f0 .scope module, "my_coder" "CoderMod" 2 16, 2 27, S_0x196d990;
+ .timescale 0 0;
+L_0x19a3560 .functor OR 1, v0x19a2e10_0, v0x19a2ef0_0, C4<0>, C4<0>;
+L_0x19a3610 .functor OR 1, v0x19a2d60_0, v0x19a2ef0_0, C4<0>, C4<0>;
+v0x19902e0_0 .alias "C0", 0 0, v0x19a2fa0_0;
+v0x19a2750_0 .alias "C1", 0 0, v0x19a3050_0;
+v0x19a27f0_0 .alias "Q0", 0 0, v0x19a31b0_0;
+v0x19a2890_0 .alias "Q1", 0 0, v0x19a32b0_0;
+v0x19a2940_0 .alias "Q2", 0 0, v0x19a3380_0;
+v0x19a29e0_0 .alias "Q3", 0 0, v0x19a3490_0;
+    .scope S_0x19a2ac0;
+T_0 ;
+    %wait E_0x19a2910;
+    %load/v 8, v0x19a2ef0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x19a2cb0_0, 0, 8;
+    %load/v 8, v0x19a2cb0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x19a2d60_0, 0, 8;
+    %load/v 8, v0x19a2d60_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x19a2e10_0, 0, 8;
+    %load/v 8, v0x19a2e10_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x19a2ef0_0, 0, 8;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x19a2ac0;
+T_1 ;
+    %set/v v0x19a2cb0_0, 1, 1;
+    %set/v v0x19a2d60_0, 0, 1;
+    %set/v v0x19a2e10_0, 0, 1;
+    %set/v v0x19a2ef0_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x196d990;
+T_2 ;
+    %set/v v0x19a3100_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0x19a3100_0, 1, 1;
+    %delay 1, 0;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x196d990;
+T_3 ;
+    %delay 16, 0;
+    %vpi_call 2 18 "$finish";
+    %end;
+    .thread T_3;
+    .scope S_0x196d990;
+T_4 ;
+    %vpi_call 2 21 "$display", "Time CLK  Q     C";
+    %vpi_call 2 22 "$monitor", "%4d   %b  %b%b%b%b  %b%b", $time, v0x19a3100_0, v0x19a31b0_0, v0x19a32b0_0, v0x19a3380_0, v0x19a3490_0, v0x19a3050_0, v0x19a2fa0_0;
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "count4.v";

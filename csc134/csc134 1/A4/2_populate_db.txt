@@ -1,0 +1,24 @@
+INSERT INTO Branch
+VALUES('Sac Bank', '1234 Sac Street');
+
+INSERT INTO Customer
+VALUES('649593827', 'John', 'Johnson', '5301942837', '890 Quiet Lane', 'Sac Bank');
+
+INSERT INTO Account
+VALUES('100234000', '100.00', '2019-04-01', 'CHECKING');
+
+INSERT INTO Owns
+VALUES('649593827', '100234000', '2019-04-01');
+
+INSERT INTO Loan
+VALUES('222000001', '1000000.00', 'BUSINESS');
+
+INSERT INTO Payment
+VALUES('222000001', '0001', '25.00', 'check', 'paid', '2019-10-01');
+
+INSERT INTO Payment
+VALUES('222000001', '0002', '25.00', 'not know', 'not paid', '2019-11-01');
+
+INSERT INTO Borrows
+VALUES('649593827', '222000001')
+

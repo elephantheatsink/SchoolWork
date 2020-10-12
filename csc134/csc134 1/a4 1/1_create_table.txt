@@ -1,0 +1,12 @@
+CREATE TABLE Branch
+	(	name	VARCHAR(25)	NOT NULL,
+		PRIMARY KEY(name),
+		address	VARCHAR(50)	
+		);
+	
+CREATE TABLE Customer
+CREATE TABLE Account
+CREATE TABLE Owns
+CREATE TABLE Loan
+CREATE TABLE Payment
+CREATE TABLE Borrows

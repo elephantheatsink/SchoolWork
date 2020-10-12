@@ -1,0 +1,73 @@
+CREATE TABLE Branch
+	(	name	VARCHAR(25)	NOT NULL,
+		address	VARCHAR(50) NOT NULL,	
+		PRIMARY KEY(name)
+		);
+	
+CREATE TABLE Customer
+	(	ssn	CHAR(9)			NOT NULL,
+		fname 	VARCHAR(25)	NOT NULL,
+		lname	VARCHAR(25)	NOT NULL,
+		phone	CHAR(10),
+		address	VARCHAR(50),
+		fv_branch	VARCHAR(25),
+		PRIMARY KEY(ssn),
+		FOREIGN KEY (fv_branch) REFERENCES Branch(name)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE
+		);
+
+CREATE TABLE Account
+	(	acc_no	CHAR(9)		NOT NULL,
+		balance	DECIMAL(15,2)	NOT NULL,
+		open_date DATE		NOT NULL,	
+		atype	VARCHAR(10)	NOT NULL,
+		PRIMARY KEY(acc_no)
+		);
+
+CREATE TABLE Owns
+	(	ssn	CHAR(9)		NOT NULL,
+		acc_no	CHAR(9)		NOT NULL,
+		own_date DATE		NOT NULL,
+		PRIMARY KEY(ssn),
+		PRIMARY KEY(acc_no),
+		FOREIGN KEY (ssn) REFERENCES Customer(ssn),
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+		FOREIGN KEY (acc_no) REFERENCES Account(acc_no)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE
+		);
+
+CREATE TABLE Loan
+	(	loan_no	CHAR(9)		NOT NULL,
+		amount	DECIMAL(15,2)	NOT NULL,
+		ltype	VARCHAR(10)	NOT NULL,
+		PRIMARY KEY(loan_no)
+		);
+
+CREATE TABLE Payment
+	(	loan_no	CHAR(9)		NOT NULL,
+		payment_no CHAR(4)	NOT NULL,
+		amount	DECIMAL(15,2)	NOT NULL,
+		method	VARCHAR(10) 	NOT NULL,
+		status	VARCHAR(10)	NOT NULL,
+		due_date DATE		NOT NULL,
+		PRIMARY KEY(loan_no),
+		PRIMARY KEY(payment_no),
+		FOREIGN KEY (loan_no) REFERENCES Loan(loan_no)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE
+		);
+CREATE TABLE Borrows
+	(	ssn	CHAR(9) 	NOT NULL,
+		loan_no	CHAR(9)		NOT NULL,
+		PRIMARY KEY(ssn),
+		PRIMARY KEY(loan_no),
+		FOREIGN KEY (ssn) REFERENCES Customer(ssn)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+		FOREIGN KEY (loan_no) REFERENCES Loan(loan_no)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE
+		);

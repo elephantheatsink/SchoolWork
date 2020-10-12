@@ -1,0 +1,67 @@
+//Beomjin Han
+//7867
+//CSC 140 Homework 2 - Programming portion
+//Basically, this program is an infinite loop that keeps asking for array lengths.
+//Once it gets the length of the array, it generates the elements with random numbers.
+//Times are recorded immediately before and after the sorting method is called.
+//After every input in the loop, it displays the array in sorted order and the time taken on the next line.
+//My test cases were 10, 20, 30, 40, 50, 60, 70, 80, 90, 10.
+//As expected, when the graph was plotted Time vs Array Length, it resembled the positive side
+//of an x^2 function. There were very minute deviations.
+
+//I'm sorry I didn't put together the homework pdf in time. (which includes my test cases screenshot and the graph)
+//I'll submit the revised version sometime this weekend.
+
+import java.util.Random;
+import java.util.Scanner;
+public class Hw2 {
+
+
+	public static void main(String[] args) {
+		Random rand = new Random();
+      Scanner sc = new Scanner(System.in);
+      
+      for(int i = 0;i<1;){                                    //infinite loop
+         System.out.println("Enter length of array:");
+         int length = sc.nextInt();                           //get length or loop
+   		int[] a = new int[length];                           //blank array with given loop length
+   		a=arrayBuilder(a);                                   //build array with random numbers 9-99999
+         long t = System.nanoTime();                          //start timer right before sort
+   		selSort(a);                                          //perform sort
+         t = System.nanoTime()-t;                             //record time
+   		printArr(a);                                         //print array in a nice way
+         System.out.println(t);                               //print time
+      }
+	}
+	
+	public static int[] selSort(int[] a){                      //selection sort from class notes
+		
+		for(int i=0; i<a.length;i++){
+			int mindex = i;
+			for(int j=i+1; j<a.length; j++){
+				if(a[j] < a[mindex]) mindex=j;
+			}
+			int swap = a[i];
+			a[i] = a[mindex];
+			a[mindex] = swap;
+		}
+		
+		return a;
+	}
+	public static void printArr(int[] a){                      //print elements in an array with a space in between
+		for(int i=0; i<a.length;i++){
+			System.out.print(a[i]+" ");
+		}
+      System.out.println();
+				
+	}
+	public static int[] arrayBuilder(int[] a){                 //loop and put random numbers in each space of the array
+		
+		Random rand = new Random();
+		for(int i=0; i<a.length;i++){
+			a[i] = rand.nextInt(100000);
+		}
+		return a;
+	}
+
+}

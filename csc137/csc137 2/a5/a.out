@@ -1,0 +1,205 @@
+#! /gaia/home/faculty/changw/ivl/bin/vvp
+:ivl_version "0.9.6 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x12cfa20 .scope module, "TestMod" "TestMod" 2 8;
+ .timescale 0 0;
+RS_0x7f2408926708 .resolv tri, L_0x12fdd00, L_0x12fee60, L_0x12fd8a0, L_0x12ff4a0;
+v0x12fc760_0 .net8 "C", 0 3, RS_0x7f2408926708; 4 drivers
+v0x12fc820_0 .var "CLK", 0 0;
+RS_0x7f2408926738/0/0 .resolv tri, L_0x12fc920, L_0x12fca20, L_0x12fcac0, L_0x12fcb90;
+RS_0x7f2408926738/0/4 .resolv tri, L_0x12fcd20, L_0x12fcdf0, L_0x12fcec0, L_0x12fcf60;
+RS_0x7f2408926738/0/8 .resolv tri, L_0x12fd110, L_0x12fd1b0, L_0x12fd250, L_0x12fd320;
+RS_0x7f2408926738/0/12 .resolv tri, L_0x12fd3f0, L_0x12fd4c0, L_0x12fd610, L_0x12fd6e0;
+RS_0x7f2408926738 .resolv tri, RS_0x7f2408926738/0/0, RS_0x7f2408926738/0/4, RS_0x7f2408926738/0/8, RS_0x7f2408926738/0/12;
+v0x12fc8a0_0 .net8 "Q", 0 15, RS_0x7f2408926738; 16 drivers
+L_0x12fc920 .part/pv v0x12fbcc0_0, 15, 1, 16;
+L_0x12fca20 .part/pv v0x12fbd60_0, 14, 1, 16;
+L_0x12fcac0 .part/pv v0x12fc1d0_0, 13, 1, 16;
+L_0x12fcb90 .part/pv v0x12fc270_0, 12, 1, 16;
+L_0x12fcd20 .part/pv v0x12fc310_0, 11, 1, 16;
+L_0x12fcdf0 .part/pv v0x12fc3b0_0, 10, 1, 16;
+L_0x12fcec0 .part/pv v0x12fc450_0, 9, 1, 16;
+L_0x12fcf60 .part/pv v0x12fc570_0, 8, 1, 16;
+L_0x12fd110 .part/pv v0x12fc610_0, 7, 1, 16;
+L_0x12fd1b0 .part/pv v0x12fc4d0_0, 6, 1, 16;
+L_0x12fd250 .part/pv v0x12fbe00_0, 5, 1, 16;
+L_0x12fd320 .part/pv v0x12fbeb0_0, 4, 1, 16;
+L_0x12fd3f0 .part/pv v0x12fbf50_0, 3, 1, 16;
+L_0x12fd4c0 .part/pv v0x12fbff0_0, 2, 1, 16;
+L_0x12fd610 .part/pv v0x12fc090_0, 1, 1, 16;
+L_0x12fd6e0 .part/pv v0x12fc130_0, 0, 1, 16;
+L_0x12fe210 .part RS_0x7f2408926738, 15, 1;
+L_0x12fe2b0 .part RS_0x7f2408926738, 14, 1;
+L_0x12fe3f0 .part RS_0x7f2408926738, 13, 1;
+L_0x12fe490 .part RS_0x7f2408926738, 12, 1;
+L_0x12fe350 .part RS_0x7f2408926738, 11, 1;
+L_0x12fe630 .part RS_0x7f2408926738, 10, 1;
+L_0x12fe530 .part RS_0x7f2408926738, 9, 1;
+L_0x12fe790 .part RS_0x7f2408926738, 8, 1;
+L_0x12fe6d0 .part RS_0x7f2408926738, 7, 1;
+L_0x12fe990 .part RS_0x7f2408926738, 6, 1;
+L_0x12fe8c0 .part RS_0x7f2408926738, 5, 1;
+L_0x12feb10 .part RS_0x7f2408926738, 4, 1;
+L_0x12fea30 .part RS_0x7f2408926738, 3, 1;
+L_0x12fed30 .part RS_0x7f2408926738, 2, 1;
+L_0x12fec40 .part RS_0x7f2408926738, 1, 1;
+L_0x12feff0 .part RS_0x7f2408926738, 0, 1;
+L_0x12fdd00 .part/pv L_0x12fb2e0, 3, 1, 4;
+L_0x12fee60 .part/pv L_0x12fdb10, 2, 1, 4;
+L_0x12fd8a0 .part/pv L_0x12fddf0, 1, 1, 4;
+L_0x12ff4a0 .part/pv L_0x12fdfe0, 0, 1, 4;
+S_0x12fbb90 .scope module, "my_ripple" "RippleMod" 2 20, 2 42, S_0x12cfa20;
+ .timescale 0 0;
+v0x12fb960_0 .net "CLK", 0 0, v0x12fc820_0; 1 drivers
+v0x12fbcc0_0 .var "Q0", 0 0;
+v0x12fbd60_0 .var "Q1", 0 0;
+v0x12fbe00_0 .var "Q10", 0 0;
+v0x12fbeb0_0 .var "Q11", 0 0;
+v0x12fbf50_0 .var "Q12", 0 0;
+v0x12fbff0_0 .var "Q13", 0 0;
+v0x12fc090_0 .var "Q14", 0 0;
+v0x12fc130_0 .var "Q15", 0 0;
+v0x12fc1d0_0 .var "Q2", 0 0;
+v0x12fc270_0 .var "Q3", 0 0;
+v0x12fc310_0 .var "Q4", 0 0;
+v0x12fc3b0_0 .var "Q5", 0 0;
+v0x12fc450_0 .var "Q6", 0 0;
+v0x12fc570_0 .var "Q7", 0 0;
+v0x12fc610_0 .var "Q8", 0 0;
+v0x12fc4d0_0 .var "Q9", 0 0;
+E_0x12fae80 .event posedge, v0x12fb960_0;
+S_0x12ca010 .scope module, "my_coder" "CoderMod" 2 21, 2 31, S_0x12cfa20;
+ .timescale 0 0;
+L_0x12fb2e0/0/0 .functor OR 1, L_0x12fe6d0, L_0x12fe990, L_0x12fe8c0, L_0x12feb10;
+L_0x12fb2e0/0/4 .functor OR 1, L_0x12fea30, L_0x12fed30, L_0x12fec40, L_0x12feff0;
+L_0x12fb2e0 .functor OR 1, L_0x12fb2e0/0/0, L_0x12fb2e0/0/4, C4<0>, C4<0>;
+L_0x12fdb10/0/0 .functor OR 1, L_0x12fe350, L_0x12fe630, L_0x12fe530, L_0x12fe790;
+L_0x12fdb10/0/4 .functor OR 1, L_0x12fea30, L_0x12fed30, L_0x12fec40, L_0x12feff0;
+L_0x12fdb10 .functor OR 1, L_0x12fdb10/0/0, L_0x12fdb10/0/4, C4<0>, C4<0>;
+L_0x12fddf0/0/0 .functor OR 1, L_0x12fe3f0, L_0x12fe490, L_0x12fe530, L_0x12fe790;
+L_0x12fddf0/0/4 .functor OR 1, L_0x12fe8c0, L_0x12feb10, L_0x12fec40, L_0x12feff0;
+L_0x12fddf0 .functor OR 1, L_0x12fddf0/0/0, L_0x12fddf0/0/4, C4<0>, C4<0>;
+L_0x12fdfe0/0/0 .functor OR 1, L_0x12fe2b0, L_0x12fe490, L_0x12fe630, L_0x12fe790;
+L_0x12fdfe0/0/4 .functor OR 1, L_0x12fe990, L_0x12feb10, L_0x12fed30, L_0x12feff0;
+L_0x12fdfe0 .functor OR 1, L_0x12fdfe0/0/0, L_0x12fdfe0/0/4, C4<0>, C4<0>;
+v0x12e0510_0 .net "C0", 0 0, L_0x12fb2e0; 1 drivers
+v0x12facc0_0 .net "C1", 0 0, L_0x12fdb10; 1 drivers
+v0x12fad60_0 .net "C2", 0 0, L_0x12fddf0; 1 drivers
+v0x12fae00_0 .net "C3", 0 0, L_0x12fdfe0; 1 drivers
+v0x12faeb0_0 .net "Q0", 0 0, L_0x12fe210; 1 drivers
+v0x12faf50_0 .net "Q1", 0 0, L_0x12fe2b0; 1 drivers
+v0x12fb030_0 .net "Q10", 0 0, L_0x12fe8c0; 1 drivers
+v0x12fb0d0_0 .net "Q11", 0 0, L_0x12feb10; 1 drivers
+v0x12fb1c0_0 .net "Q12", 0 0, L_0x12fea30; 1 drivers
+v0x12fb260_0 .net "Q13", 0 0, L_0x12fed30; 1 drivers
+v0x12fb360_0 .net "Q14", 0 0, L_0x12fec40; 1 drivers
+v0x12fb400_0 .net "Q15", 0 0, L_0x12feff0; 1 drivers
+v0x12fb510_0 .net "Q2", 0 0, L_0x12fe3f0; 1 drivers
+v0x12fb5b0_0 .net "Q3", 0 0, L_0x12fe490; 1 drivers
+v0x12fb6d0_0 .net "Q4", 0 0, L_0x12fe350; 1 drivers
+v0x12fb770_0 .net "Q5", 0 0, L_0x12fe630; 1 drivers
+v0x12fb630_0 .net "Q6", 0 0, L_0x12fe530; 1 drivers
+v0x12fb8c0_0 .net "Q7", 0 0, L_0x12fe790; 1 drivers
+v0x12fb9e0_0 .net "Q8", 0 0, L_0x12fe6d0; 1 drivers
+v0x12fba60_0 .net "Q9", 0 0, L_0x12fe990; 1 drivers
+    .scope S_0x12fbb90;
+T_0 ;
+    %wait E_0x12fae80;
+    %load/v 8, v0x12fc130_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fbcc0_0, 0, 8;
+    %load/v 8, v0x12fbcc0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fbd60_0, 0, 8;
+    %load/v 8, v0x12fbd60_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc1d0_0, 0, 8;
+    %load/v 8, v0x12fc1d0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc270_0, 0, 8;
+    %load/v 8, v0x12fc270_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc310_0, 0, 8;
+    %load/v 8, v0x12fc310_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc3b0_0, 0, 8;
+    %load/v 8, v0x12fc3b0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc450_0, 0, 8;
+    %load/v 8, v0x12fc450_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc570_0, 0, 8;
+    %load/v 8, v0x12fc570_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc610_0, 0, 8;
+    %load/v 8, v0x12fc610_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc4d0_0, 0, 8;
+    %load/v 8, v0x12fc4d0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fbe00_0, 0, 8;
+    %load/v 8, v0x12fbe00_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fbeb0_0, 0, 8;
+    %load/v 8, v0x12fbeb0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fbf50_0, 0, 8;
+    %load/v 8, v0x12fbf50_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fbff0_0, 0, 8;
+    %load/v 8, v0x12fbff0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc090_0, 0, 8;
+    %load/v 8, v0x12fc090_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12fc130_0, 0, 8;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x12fbb90;
+T_1 ;
+    %set/v v0x12fbcc0_0, 1, 1;
+    %set/v v0x12fbd60_0, 0, 1;
+    %set/v v0x12fc1d0_0, 0, 1;
+    %set/v v0x12fc270_0, 0, 1;
+    %set/v v0x12fc310_0, 0, 1;
+    %set/v v0x12fc3b0_0, 0, 1;
+    %set/v v0x12fc450_0, 0, 1;
+    %set/v v0x12fc570_0, 0, 1;
+    %set/v v0x12fc610_0, 0, 1;
+    %set/v v0x12fc4d0_0, 0, 1;
+    %set/v v0x12fbe00_0, 0, 1;
+    %set/v v0x12fbeb0_0, 0, 1;
+    %set/v v0x12fbf50_0, 0, 1;
+    %set/v v0x12fbff0_0, 0, 1;
+    %set/v v0x12fc090_0, 0, 1;
+    %set/v v0x12fc130_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x12cfa20;
+T_2 ;
+    %set/v v0x12fc820_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0x12fc820_0, 1, 1;
+    %delay 1, 0;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x12cfa20;
+T_3 ;
+    %delay 36, 0;
+    %vpi_call 2 23 "$finish";
+    %end;
+    .thread T_3;
+    .scope S_0x12cfa20;
+T_4 ;
+    %vpi_call 2 26 "$display", "Time CLK  Q                 C      C";
+    %vpi_call 2 27 "$monitor", "  %2d   %b  %b  %b  %2d", $time, v0x12fc820_0, v0x12fc8a0_0, v0x12fc760_0, v0x12fc760_0;
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "count16.v";

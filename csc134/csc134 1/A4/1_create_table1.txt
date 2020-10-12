@@ -1,0 +1,51 @@
+CREATE TABLE Branch
+	(	name	VARCHAR(25)	NOT NULL,
+		address	VARCHAR(50),	
+		PRIMARY KEY(name)
+		);
+	
+CREATE TABLE Customer
+	(	ssn	CHAR(9)		NOT NULL,
+		fname 	VARCHAR(25),
+		lname	VARCHAR(25),
+		phone	CHAR(10),
+		address	VARCHAR(50),
+		fv_branch	VARCHAR(25),
+		PRIMARY KEY(ssn),
+		FOREIGN KEY (fv_branch) REFERENCES Branch(name)
+		);
+
+CREATE TABLE Account
+	(	acc_no	CHAR(9)		NOT NULL,
+		balance	DECIMAL(15,2)	NOT NULL,
+		open_date DATE		NOT NULL,	
+		atype	VARCHAR(10)	NOT NULL,
+		PRIMARY KEY(acc_no)
+		);
+
+CREATE TABLE Owns
+	(	ssn	CHAR(9)		NOT NULL,
+		acc_no	CHAR(9)		NOT NULL,
+		own_date DATE		NOT NULL,
+		PRIMARY KEY(ssn),
+		PRIMARY KEY(acc_no),
+		FOREIGN KEY (ssn) REFERENCES Customer(ssn),
+		FOREIGN KEY (acc_no) REFERENCES Account(acc_no)
+		);
+
+CREATE TABLE Loan
+	(	loan_no	CHAR(
+		amount
+		ltype
+		);
+
+CREATE TABLE Payment
+	(	loan_no
+		payment_no
+		amount
+		method
+		status
+		due_date
+		);
+CREATE TABLE Borrows
+	(

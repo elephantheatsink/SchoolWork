@@ -1,0 +1,58 @@
+#! /gaia/home/faculty/changw/ivl/bin/vvp
+:ivl_version "0.9.6 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1697bc0 .scope module, "TestMod" "TestMod" 2 18;
+ .timescale 0 0;
+v0x16aa1e0_0 .net "o0", 0 0, L_0x16aa780; 1 drivers
+v0x16aa280_0 .net "o1", 0 0, L_0x16aa8d0; 1 drivers
+v0x16aa330_0 .net "o2", 0 0, L_0x16aa980; 1 drivers
+v0x16aa3e0_0 .net "o3", 0 0, L_0x16aaa30; 1 drivers
+v0x16aa4c0_0 .var "s0", 0 0;
+v0x16aa570_0 .var "s1", 0 0;
+S_0x1697cb0 .scope module, "my_decoder" "DecoderMod" 2 22, 2 5, S_0x1697bc0;
+ .timescale 0 0;
+L_0x16aa5f0 .functor NOT 1, v0x16aa570_0, C4<0>, C4<0>, C4<0>;
+L_0x16aa6d0 .functor NOT 1, v0x16aa4c0_0, C4<0>, C4<0>, C4<0>;
+L_0x16aa780 .functor AND 1, L_0x16aa5f0, L_0x16aa6d0, C4<1>, C4<1>;
+L_0x16aa8d0 .functor AND 1, L_0x16aa5f0, v0x16aa4c0_0, C4<1>, C4<1>;
+L_0x16aa980 .functor AND 1, v0x16aa570_0, L_0x16aa6d0, C4<1>, C4<1>;
+L_0x16aaa30 .functor AND 1, v0x16aa570_0, v0x16aa4c0_0, C4<1>, C4<1>;
+v0x1697da0_0 .net "inv_s0", 0 0, L_0x16aa6d0; 1 drivers
+v0x16a9ce0_0 .net "inv_s1", 0 0, L_0x16aa5f0; 1 drivers
+v0x16a9d80_0 .alias "o0", 0 0, v0x16aa1e0_0;
+v0x16a9e20_0 .alias "o1", 0 0, v0x16aa280_0;
+v0x16a9ed0_0 .alias "o2", 0 0, v0x16aa330_0;
+v0x16a9f70_0 .alias "o3", 0 0, v0x16aa3e0_0;
+v0x16aa050_0 .net "s0", 0 0, v0x16aa4c0_0; 1 drivers
+v0x16aa0f0_0 .net "s1", 0 0, v0x16aa570_0; 1 drivers
+    .scope S_0x1697bc0;
+T_0 ;
+    %vpi_call 2 25 "$monitor", "%0d\011%b\011%b\011%b\011%b\011%b\011%b", $time, v0x16aa570_0, v0x16aa4c0_0, v0x16aa1e0_0, v0x16aa280_0, v0x16aa330_0, v0x16aa3e0_0;
+    %vpi_call 2 26 "$display", "Time\011s1\011s0\011o0\011o1\01102\01103";
+    %vpi_call 2 27 "$display", "--------------------------------------------------";
+    %end;
+    .thread T_0;
+    .scope S_0x1697bc0;
+T_1 ;
+    %set/v v0x16aa570_0, 0, 1;
+    %set/v v0x16aa4c0_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0x16aa570_0, 0, 1;
+    %set/v v0x16aa4c0_0, 1, 1;
+    %delay 1, 0;
+    %set/v v0x16aa570_0, 1, 1;
+    %set/v v0x16aa4c0_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0x16aa570_0, 1, 1;
+    %set/v v0x16aa4c0_0, 1, 1;
+    %delay 1, 0;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "decoder2x4.v";

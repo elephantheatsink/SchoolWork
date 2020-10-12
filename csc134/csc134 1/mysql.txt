@@ -1,0 +1,4 @@
+mysql -h athena -u cs134114 -p
+
+hqbtxpsd
+
