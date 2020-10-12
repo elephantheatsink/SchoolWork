@@ -1,0 +1,24 @@
+x= log4 (n)
+4^x = n
+
+
+going from 1 to n
+1*4^1
+1*4^2
+
+x is the depth
+n is te number of terms
+it takes log4 (n) depth to get to n
+
+
+take n
+do something n times
+something does something else n times
+
+T(n) = theta(n^log2(4)) = theta(n^2)
+T(n) = 4T(n/2)+n
+
+1. divide n by 2
+2. 4 recurrences using the subproblem
+3. if n=1 return the single element
+4. 4 recurrences return 4 values to be conquered in n time

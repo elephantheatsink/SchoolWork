@@ -1,0 +1,13 @@
+1. put everything in fifo queue 
+
+get procs
+
+time 0
+all procs arrive
+fifo queue
+for loop
+int nextqueue=0
+proc arrive
+go thru every procs
+fifo[nextqueue]=procname
+nextqueue++

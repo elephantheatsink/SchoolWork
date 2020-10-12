@@ -1,0 +1,7 @@
+for(int i = 0; i < thrct; i++){
+	
+		gData[i][0]=i;
+		gData[i][1]= i * size/thrct + 0;
+		gData[i][2]= i * size/thrct + 		size/thrct - 1;
+	
+}

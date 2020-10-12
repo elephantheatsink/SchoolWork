@@ -1,0 +1,43 @@
+Register File
+	inputs: op1, op2, write register 1, write register 2 (15), write data 1, write data 2, regwrite 1, regwrite 2
+	outputs: read data 1, read data 2
+	
+	write register, write data 1 and 2 come from buffers. 
+	
+ALU
+	2 control signals going into muxes to determine what goes into each operand of the ALU
+	ALU OP code goes into the ALU to determine what kind fo operation it'll do. the ALU op code comes out of the ALU control, as a result of ALUOp and function code.
+	Each ALU operand is forwarded and requires forward control signal, with muxes. After that, we need one more layer of muxes to determine if the ALU operand is for A type or other types.
+	ALU has 3 outputs. Zero, Top Half, and Bottom Half.
+	
+ALU2
+	Used for branch. adds the branch address to program counter.
+	
+Instruction Memory
+	contains all the instructions. output of the program counter is the input of the instruction memory. output of instruction memory is the 16-bit instruction.
+	
+Program Counter
+	output is the address of the instruction in the instruction memory. input of the program counter is either the previous program counter plus two, or the result of branch or jump.
+	
+Data Memory
+	inputs are address of memory and the data that will go to that address. output is data that is read if MemRead is asserted. if memwrite is asserted, it just writes. 
+	
+	
+Load and store
+	there needs to be control signals to determine byte or not
+	Load byte, bits stripped after the data memory to get just 8 bits
+	Store byte, bits stripped before data memory to only input 8 bits into write data
+	
+Branch
+	compares op1 result and R15 data to jump to address defined by op2
+	add a mux to RR2 so that it chooses between second operand and 15. the resulting values out of the register will be compared. comparison result goes into mux to use second operand as branch address
+	second operand needs to be isolated to determine the address of the branch
+	
+Jump
+	instruction never touches register
+	instruction goes out of instruction memory and part of it goes to sign extend and shift left. PC is then added
+	
+Sign extend
+	used for load, store, branch, jump.
+	
+Shift left

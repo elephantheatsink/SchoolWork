@@ -1,0 +1,25 @@
+term project notes
+
+Type A
+addition/subtraction - ALU operates on operand 1 and 2 and result goes in the register of op1
+mult/division - key difference from add/sub is the result of ALU is two results. one part goes in op1 register and other part goes in register #15. this requires register file to have two "write register address" and two "write data" inputs. the opcode of the operation results in a control signal that determines if R15 is written or not. perhaps this requires the register file to also have two control signals going in: "regwrite op1" and "regwrite R15"
+
+summary: register file has inputs op1, op2, write op1, write 15, write data op1, write data 15
+                            outputs read data op1, read data op2
+							control signal inputs regwrite op1, regwrite R15
+							
+
+Type B
+load, store, and both in byte
+load - assert regwrite op1, op2 determines memory location for the data to be written into op1. read data 1
+store - 
+
+look up
+forward control signals
+where does write register 1 come from
+mux in front of forwarding unit, what controls that? RegDest
+however, we do not need RegDst because only op 1 the only destination register, when regwrite is asserted. only need to forward op1. 
+
+Forwarding unit
+
+Note on branch: in mips, resulting address is pc+4+branchaddr. in project, the resulting address is pc+branchaddr. the adder operand must come from pc before it gets +2

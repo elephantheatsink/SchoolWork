@@ -1,0 +1,5 @@
+NEW CONTROL SIGNAL DESCRIPTIONS
+Immed Op2 - similar to ALUSrc, it chooses the second operand of the ALU. 0 means the forwarded op2 data goes into the ALU. 1 means the immediate op2, appended with 8 zeros in front, will go into the ALU.
+r15mux - Used in branch instructions, this allows 15 to go into op2 read register input, so that the value in register 15 will be compared with the value in op1. actual op2 in the instruction is sign extended, shifted left, and added to PC to become new instruction address.
+LoadBy - used in Load Byte, so that after data from data memory is out, only 8 bottom bits and zeros as top bits are sent to op1, the destination.
+StoreBy - used is Store Byte, so only bottom 8 bits of op1 result is written in the data memory.

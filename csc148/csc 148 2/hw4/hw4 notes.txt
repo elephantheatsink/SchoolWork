@@ -1,0 +1,13 @@
+1 warehouse and 3 home depots
+order 90-pound bag of shingles
+Reorder point = 50
+HD finishes when its inventory reaches 50, no reorder this assignment
+then model terminates when 3 HD finish
+class HD, class W
+
+import simpy, random, numpy as np, pdb
+
+inventory starts at 200
+order size distr[10,45] “np.random.uniform(x,y)”
+
+  s to  2
