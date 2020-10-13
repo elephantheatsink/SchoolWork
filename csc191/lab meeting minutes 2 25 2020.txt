@@ -1,0 +1,18 @@
+prof was able to run the web app
+prof asked us what work we're currently doing
+
+beomjin asked prof if there is any development strategies to combat constant npm install/compile, which takes a lot of time
+austin talked about the difficulties we had with gitlab and strategies
+
+we need backlog for sprint 6, send to prof
+maybe ask the business department regarding some of the technical difficulties regarding visualization
+
+prof is pleased with our progress and the distribution of our work
+
+keep documentation and visualization for organizing the sprints
+
+next time, there will be a 2 minute presentation for everyone at the lab meeting
+ 
+oral presentation is at the end of april, preferably we have a finished product before then
+
+we have about 4 sprints left

@@ -1,0 +1,9 @@
+showed Terry the current screenshots of the pages.
+talked to Terry regarding GoDaddy web hosting. Terry said he will get a package today and give us the information to get started on it.
+
+we need to add a column to existing sprinkler database to show which sprinkler has visualization data.
+user would need to select sprinkler and it shows the visualization.
+maybe choose from a filtered grid?
+we can use whatever method for the user to pick a sprinkler to display visualization.
+
+Terry told us it would be ok for us to reach him by phone for urgent questions.

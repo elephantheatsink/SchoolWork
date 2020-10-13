@@ -1,0 +1,28 @@
+presentation
+
+
+
+Hi, my name is Beomjin Han, I'll be talking about deployment of the website.
+When we discussed with the client about deploying the website, making the website go live, our client
+was very specific that he wanted to use GoDaddy.com for this project. 
+His company had a couple wordpress websites that were hosted by GoDaddy, and he wanted to
+put this new website on the same account, for convenience.
+
+You can see the deployment diagram on the right side. The database and web server
+are on different devices. The databases are hosted on the cloud service provided by MongoDB.
+The client web browser interacts with the react app that's on the godaddy server.
+The user can now access the sprinkler database which contains the visualization files.
+The visualization app communicates with the user database that's on the MongoDB cloud as well.
+
+GoDaddy provided cPanel services, and we used a ssh client and file transfer client to move files and install the environment and application.
+
+Deployment was not a requirement but the process of deployment is currently in progress
+The front end works and is up and running.
+The backend requires permissions from the client 
+  so we've mostly passed the torch onto Terry to get that up.
+
+I'll now pass it on to Sean Foley for the next slide.
+
+
+we're going to set up a virtual machine in the godaddy server that can communicate with the mongodb cloud
+there's also an option for the client to purchase a dedicated VPS

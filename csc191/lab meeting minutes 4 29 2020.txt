@@ -1,0 +1,8 @@
+she asked if we did the allocation for the presentation slides yet
+she said rehearsing the presentation will be helpful
+she asked us to send how we allocated the slides by friday
+she asked us to do a round robin of what everyone's been working on
+she asked about the last client meeting and if the client wants anything else from the project, or if he's happy with the finished product
+she said it's ok to "freeze" the project for the presentation and add more stuff after if needed
+she asked about testing, and she suggested us saying that this site doesn't really require different levels of testing from a software like Selenium, since we do all the functionality testing manually
+she told us that prof Yang will be looking closely in the Flying Donut

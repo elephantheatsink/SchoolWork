@@ -1,0 +1,10 @@
+godaddy startlogic and digitalocean
+call godaddy as new customer and find out requirements of running a mern webapp
+can we use shared hosting?
+
+terry emailed us sprinkler database
+terry said if the project becomes too difficult and we cannot finish, let him know and he'll alter the requirements
+
+demo'd the webpage to terry
+fields did not type for a time period then fixed itself, not sure what is happening there
+submit buttons on login and register may not be working, check later with testing

@@ -1,0 +1,20 @@
+azimuth angle, rotational angle
+less we use of the original code the better
+time permitting, client would want the web to look nice, but priority is the funtionality
+
+20 to 30 sprinklers now, hoping to be in the thousands
+
+currently it's in a sql lite
+it is all stored in a csv file but they port it to sql
+
+godaddy startlogic are the hosting services currently
+startlogic for wordpress
+godaddy
+
+registrations process
+whitelist for email domains
+individual approval for the others
+email confirmation required
+first name, last name, company
+
+visualization is main priority, next is the website layout
