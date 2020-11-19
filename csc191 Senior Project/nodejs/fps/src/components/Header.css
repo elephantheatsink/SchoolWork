@@ -1,0 +1,22 @@
+
+.hpheader {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background-image: url('images/cold-fire-flames.jpg');
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-image: transparent;
+}
+.hpbackground{
+   background-position: center;
+    background-image: url('images/header_background.jpg');
+    background-size:100% 100%;
+    position: relative;
+}
+.rgbackground{
+    background-position: center;
+     background-image: url('images/white-black-smoke.jpg');
+     background-size:100% 100%;
+     position: relative;
+ }

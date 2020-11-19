@@ -1,0 +1,43 @@
+/* Viz styles */
+svg {
+    fill: transparent;
+  }
+  
+  .back-line {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .05;
+    stroke-width: 1.5px;
+  }
+  
+  .country {
+    stroke: black;
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+  }
+  .country:hover {
+    fill:red !important;
+    stroke-width: 1px;
+  }
+  
+  .line {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .08;
+    stroke-width: 1.5px;
+  }
+  .red {
+    fill: none;
+    stroke: red;
+    stroke-width: 3.5px;
+  }
+  .green {
+    fill: none;
+    stroke: green;
+    stroke-width: 3.5px;
+  }
+  .cyan {
+    fill: none;
+    stroke: cyan;
+    stroke-width: 3.5px;
+  }
